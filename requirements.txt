@@ -1,1 +1,3 @@
 spacy
+google-cloud-storage
+git+https://github.com/explosion/spacy-transformers#spacy-transformers
