@@ -55,3 +55,7 @@ bucket_name: str =  Name of Google Cloud Bucket to save the file.
 bucket_folder: str = The folder inside the bucket to save the file. If the folder doesn't exist it will be created.
 config_path: str = local path to save the cfg file
 model_path: str = local path to save the model file
+
+## Code Examples
+
+An example for each function is inside of [code_example](https://github.com/rennanvoa2/save_spacy/tree/main/code_example) folder.
