@@ -11,6 +11,9 @@ os.environ["TOKENIZERS_PARALLELISM"] = "false"
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = acess_json_path
 ```
 
+To install:
+
+`pip install -U save-spacy`
 
 ## Local
 

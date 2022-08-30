@@ -3,7 +3,7 @@ from distutils.core import setup
 setup(
     name = 'save_spacy',
     packages = ['save_spacy'],
-    version = 'v1.0.1',
+    version = 'v1.0.2',
     description = "Save and Load Spacy models locally and on GCP.",
     author="Rennan Valadares",
     author_email="rennanvoa2@gmail.com",
