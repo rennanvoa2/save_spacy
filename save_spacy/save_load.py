@@ -9,8 +9,8 @@ class SaveSpacy:
     def save_model_local(
         self,
         spacy_model: spacy.language,
-        config_path="cfg.pkl",
-        model_path="bytes_model.pkl",
+        config_path : str = "cfg.pkl",
+        model_path : str = "bytes_model.pkl",
     ) -> None:
         """
         This function saves a Spacy model locally.
@@ -48,7 +48,7 @@ class SaveSpacy:
         return nlp
 
     def load_model_gcp(
-        self, gcp_folder: str, bucket: str, cfg_filename: str, bytes_filename: str,
+        self, bucket_name: str, bucket_folder: str, cfg_filename: str, bytes_filename: str,
     ) -> spacy.language:
         """
         This function loads a Spacy model stored in GCP storage bucket.
@@ -60,16 +60,16 @@ class SaveSpacy:
 
         client = storage.Client()
 
-        bucket = client.get_bucket(bucket)
+        bucket = client.get_bucket(bucket_name)
 
         config_str = bucket.get_blob(
-            "{}/{}".format(gcp_folder, cfg_filename)
+            "{}/{}".format(bucket_folder, cfg_filename)
         ).download_as_string()  # Download string (config file)
 
         config_file = pickle.loads(config_str)  # Pickle load as string
 
         bytes_str = bucket.get_blob(
-            "{}/{}".format(gcp_folder, bytes_filename)
+            "{}/{}".format(bucket_folder, bytes_filename)
         ).download_as_string()  # Download string (model file)
 
         bytes_model = pickle.loads(bytes_str)  # Pickle load as string
